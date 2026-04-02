@@ -45,4 +45,4 @@ jobs:
         run: |
           cp ${{ github.workspace }}/target/*.jar \
              /home/nvkhoacoder/product_project/product_source/product-management.jar
-          chown ubuntu:ubuntu /home/nvkhoacoder/product_project/product_source/product-management.jar
+          chown nvkhoacoder:nvkhoacoder /home/nvkhoacoder/product_project/product_source/product-management.jar
