@@ -41,8 +41,14 @@ jobs:
         run: ls -lh ${{ github.workspace }}/target
 
       # Copy .jar sang chỗ bạn muốn chạy app
+#      - name: Copy jar to run directory
+#        run: |
+#          cp ${{ github.workspace }}/target/*.jar \
+#             /home/nvkhoacoder/product_project/product_source/product-management.jar
+#          chown nvkhoacoder:nvkhoacoder /home/nvkhoacoder/product_project/product_source/product-management.jar
       - name: Copy jar to run directory
         run: |
+          mkdir -p /home/nvkhoacoder/product_project/product_source
           cp ${{ github.workspace }}/target/*.jar \
              /home/nvkhoacoder/product_project/product_source/product-management.jar
-          chown nvkhoacoder:nvkhoacoder /home/nvkhoacoder/product_project/product_source/product-management.jar
+          chown -R nvkhoacoder:nvkhoacoder /home/nvkhoacoder/product_project/product_source
