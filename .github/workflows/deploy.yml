@@ -52,3 +52,15 @@ jobs:
           cp ${{ github.workspace }}/target/*.jar \
              /home/nvkhoacoder/product_project/product_source/product-management.jar
           chown -R nvkhoacoder:nvkhoacoder /home/nvkhoacoder/product_project/product_source
+
+deploy:
+    name: Deploy Project
+    runs-on: self-hosted
+    needs: build
+    
+    steps:
+      - name: Restart product-app service
+        run: |
+          sudo systemctl daemon-reload
+          sudo systemctl restart product-app
+          sudo systemctl status product-app --no-pager
