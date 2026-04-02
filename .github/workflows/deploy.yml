@@ -44,5 +44,5 @@ jobs:
       - name: Copy jar to run directory
         run: |
           cp ${{ github.workspace }}/target/*.jar \
-             /home/product_project/product_source/product-management.jar
-          chown ubuntu:ubuntu /home/product_project/product_source/product-management.jar
+             /home/nvkhoacoder/product_project/product_source/product-management.jar
+          chown ubuntu:ubuntu /home/nvkhoacoder/product_project/product_source/product-management.jar
